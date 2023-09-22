@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https/yercadu/affrodableadventures.com</title>
+    <link rel="stylesheet" href="places.css">
+    
+</head>
+<body>
+
+    <div class="hommeland" >
+        <header type="logo">
+            <h1>Affordable Adventures</h1>
+            
+            <nav>
+             <a href="trip.html"> Home</a>
+             <a href="aboutus.html">about</a>
+             <a href="contact us.html">contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <h1>YERCADU</h1><br><br>
+    <h2> budget preperation of yercadu</h2>
+    <h4>"quotes"</h4>
+
+    <article>
+
+        <div class="emm">
+        <h1>Hotel and Bike Rental Calculator</h1>
+        </div>
+        <br><br><br>
+        <!--<label for="days">Number of Days Stay:</label>-->
+        <div class="input">
+        <input type="number" name="input" id="days" min="1" placeholder="Enter number of days"><br><br>
+        </div>
+
+        <select name="" id="">
+            <option value="">Ariyalur,tamilnadu</option>
+            <option value="">Chengalpattu,tamilnadu</option>
+            <option value="">Chennai,tamil</option>
+            <option value="">Coimbatore,tamilnadu</option>
+            <option value="">Cuddalore,tamilnadu</option>
+            <option value="">Dharmapuri,tamilnadu</option>
+            <option value="">Dindigul,tamilnadu</option>
+            <option value="">Erode,tamilnadu</option>
+            <option value="">Kallakurichi,tamilnadu</option>
+            <option value="">Kancheepuram,tamilnadu</option>
+            <option value="">Karur,tamilnadu</option>
+            <option value="">Krishnagiri,tamilnadu</option>
+            <option value="">Madurai,tamilnadu</option>
+            <option value="">Mayiladuthurai,tamilnadu</option>
+            <option value="">Nagapattinam,tamilnadu</option>
+            <option value="">Kanniyakumari,tamilnadu</option>
+            <option value="">Namakkal,tamilnadu</option>
+            <option value="">Perambalur,tamilnadu</option>
+            <option value="">Pudukottai,tamilnadu</option>
+            <option value="">Ramanathapuram,tamilnadu</option>
+            <option value="">ranipet,tamilnadu</option>
+            <option value="">salem,tamilnadu</option>
+            <option value="">sivagangai,tamilnadu</option>
+            <option value="">tenkasi,tamilnadu</option>
+            <option value="">thanjavur,tamilnadu</option>
+            <option value="">theni,tamilnadu</option>
+            <option value="">thiruvallur,tamilnadu</option>
+            <option value="">thiruvarur,tamilnadu</option>
+            <option value="">thoothukudi,tamilnadu</option>
+            <option value="">trichirappalli,tamilnadu</option>
+            <option value="">thirunelveli,tamilnadu</option>
+            <option value="">thirupathur,tamilnadu</option>
+            <option value="">tiruppur,tamilnadu</option>
+            <option value="">tiruvannamalai,tamilnadu</option>
+            <option value="">nilgiri,tamilnadu</option>
+            <option value="">vellor,tamilnadu</option>
+            <option value="">vilupuram,tamilnadu</option>
+            <option value="">virudhunagar</option>
+        </select>
+        <!--<label for="bike">Select Bike:</label>-->
+        <select id="bike">
+            <option value="bike1">Royal Enfield 350</option>
+            <option value="bike2">KTM 390</option>
+            <option value="bike3">BMW G 310R</option>
+            <option value="bike4">Kawasaki Ninja H2</option>
+        </select><br><br>
+    
+        <!--<label for="Hotel">Select the Hotel</label>-->
+        <select id="Hotel">
+            <option value="Hotel1">Great trail Yercadu by GRT hotel (₹16,700/per)</option>
+            <option value="Hotel2">the story resurt and spa (₹10,115/per)</option>
+            <option value="Hotel3">Grange Resort (₹5,225/per)</option>
+            <option value="Hotel4">hotel sevaroys(₹2,900/per )</option>
+        </select><br><br>
+    
+        <button class="btn" onclick="calculateTotal()">Calculate Total</button>
+
+        <br>
+        <br>
+    
+        <div class="ko">
+    
+        <p id="Cost_Bike"></p>
+        <p id="Cost_Hotel"></p>
+    
+        <p id="total"></p>
+
+
+        </div>
+    
+        <script>
+            function calculateTotal() {
+                // Get the number of days from the input
+                var days = parseInt(document.getElementById("days").value);
+    
+                // Get the selected bike's value
+                var selectedBike = document.getElementById("bike").value;
+    
+                // Define the Fuel Cost
+             var bike_Fuel_Prices = {
+                    "bike1": 40,
+                    "bike2": 46,
+                    "bike3": 28,
+                    "bike4": 15
+                };
+    
+                // Get the selected Hotel
+    
+                var selectedHotel = document.getElementById("Hotel").value;
+    
+                //Define the Hotel_Rent
+    
+                var Hotel_Rent = {
+    
+                    "Hotel1": 16700,
+                    "Hotel2": 10115,
+                    "Hotel3": 5225,
+                    "Hotel4": 2900
+                    
+                };
+    
+                // Calculate the bike rental cost based on the selected bike
+                var bikeCost = (44/bike_Fuel_Prices[selectedBike])*120;
+    
+                // Calculate the hotel rent (assuming a fixed rate of $100 per day)
+
+                var hotelRent = Hotel_Rent[selectedHotel] * days;
+    
+                // Calculate the total amount
+                var totalAmount = bikeCost + hotelRent;
+    
+                // Display the total amount
+                var totalElement = document.getElementById("total");
+                var _bikeCost = document.getElementById("Cost_Bike");
+                var _HotelCost = document.getElementById("Cost_Hotel");
+                _bikeCost.innerHTML = "Total Fuel_Cost: ₹" + bikeCost;
+                _HotelCost.innerHTML = "Total Hotel_Rent for" + days + "is: ₹" + hotelRent;
+                totalElement.innerHTML = "Total Amount: ₹" + totalAmount;
+            }
+        </script>
+        </article>
+        <nav class="whea">
+        <a href="https://www.accuweather.com/en/in/yercaud/206513/weather-forecast/206513">Weather casting</a>
+        </nav>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+    <!--<div class="cc1">
+    <form action="">
+        
+            <div class="input">
+                <form action="">
+
+         <select name="" id="">
+            <option value="">Royal enfield Hunter 350</option>
+            <option value="">Pulsar 150</option>
+            <option value="">KTM 200</option>
+            <option value="">duke 350</option>
+         </select>
+
+
+        <input type="number" name="bikecc" id="bikecc" placeholder="enter the bike cc" required minlength="100" maxlength="350"><br><br>
+         <select name="hotel" id="hotel">
+            <option value="">Great trail Yercadu by GRT hotel (₹16,700/per)</option>
+            <option value="">the story resurt and spa (₹10,115/per)</option>
+            <option value="">Grange Resort (₹5,225/per)</option>
+            <option value="">hotel sevaroys(₹2,900/per )</option>
+         </select>
+         <br><br>
+         <input type="number" name="day stay" id="day stay" placeholder="enter how many days stay in hotel">
+         <br>
+         <br>
+         <button class="btn">Get budget</button>
+         </div>
+    </form>-->
+    </div>
+    <br>
+    
+
+    
+    <h3>place location</h3>
+    <div class="map1">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100756.80444691633!2d78.09484189123566!3d11.725240250206213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf42b4747d5eb%3A0x1d3ccd9945d5e7ee!2sYercaud%2C%20Tamil%20Nadu%20636601!5e1!3m2!1sen!2sin!4v1695228297705!5m2!1sen!2sin" width="1366" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+     <!--  <iframe src= "https://www.google.com/maps/d/embed?mid=1WcQq_pw7JxW-bJpQFX0CczyRpDs&hl=en&ehbc=2E312F" width="600" height="300"></iframe>-->
+    </div>
+
+    <section class="yercadu hotels">
+        <p>top 3 Hotel in yercadu</p><br><br>
+<div class="cards">
+<a href="https://www.tripadvisor.in/Hotel_Review-g1009352-d1413258-Reviews-Great_Trails_Yercaud_by_GRT_Hotels-Yercaud_Salem_District_Tamil_Nadu.html">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-asad-photo-maldives-1591361.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>Great trail Yercadu (₹16,700/per)</h2>
+    </div>
+
+</div>
+</a>
+<a href="https://www.thestoryresorts.com/">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-max-rahubovskiy-6758532.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>the story resurt and spa (₹10,115/per)</h2>
+    </div>
+
+</div>
+</a>
+<a href="https://hotelshevaroys.com/">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-igor-starkov-756083.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>Grange Resort (₹5,225/per)</h2>
+    </div>
+
+</div>
+</a>
+
+
+    </section>
+    <section class="yercadu hotels">
+        <p>top 3 tourist places in yercadu</p><br><br>
+<div class="cards">
+<a href="_">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-asad-photo-maldives-1591361.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>yercadu BOat house</h2>
+    </div>
+
+</div>
+</a>
+<a href="https://www.thestoryresorts.com/">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-max-rahubovskiy-6758532.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>Pacoda point</h2>
+    </div>
+
+</div>
+</a>
+<a href="https://hotelshevaroys.com/">
+<div class="card">
+    <div class="zoom-img">
+        <div class="img-card">
+            <img src="pexels-igor-starkov-756083.jpg">
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>Glass Bridge Yercadu</h2>
+    </div>
+
+</div>
+</a>
+
+
+    </section>
+</body>
+</html>
